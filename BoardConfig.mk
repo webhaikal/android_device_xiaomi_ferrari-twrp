@@ -70,12 +70,15 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE    := 0x068000000
 BOARD_USERDATAIMAGE_PARTITION_SIZE  := 0x307dfbc00
 BOARD_FLASH_BLOCK_SIZE := 131072
 
+# Crypto
+#TARGET_HW_DISK_ENCRYPTION := false
+#TW_INCLUDE_CRYPTO := true
+
 #Recovery
 BOARD_SUPPRESS_EMMC_WIPE := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 RECOVERY_SDCARD_ON_DATA := true
 RECOVERY_VARIANT := twrp
-TARGET_HW_DISK_ENCRYPTION := false
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/twrp.fstab
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 TARGET_RECOVERY_QCOM_RTC_FIX := true
@@ -83,8 +86,20 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun%d
 TWHAVE_SELINUX := true
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
 TW_EXCLUDE_SUPERSU := true
-TW_INCLUDE_CRYPTO := true
 TW_MTP_DEVICE := "/dev/mtp_usb"
 TW_NO_USB_STORAGE := true
 TW_OEM_BUILD := false
 TW_THEME := portrait_hdpi
+
+#MultiROM config. MultiROM also uses parts of TWRP config
+MR_INPUT_TYPE := type_b
+MR_INIT_DEVICES := $(LOCAL_PATH)/multirom/mr_init_devices.c
+MR_DPI := xhdpi
+MR_DPI_FONT := 340
+MR_FSTAB := $(LOCAL_PATH)/multirom/mrom.fstab
+MR_KEXEC_MEM_MIN := 0x82000000
+MR_KEXEC_DTB := true
+MR_USE_MROM_FSTAB := true
+MR_CONTINUOUS_FB_UPDATE := true
+MR_NO_KEXEC := enabled
+TARGET_RECOVERY_IS_MULTIROM := true
