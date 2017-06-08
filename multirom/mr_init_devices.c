@@ -14,7 +14,7 @@ const char *mr_init_devices[] =
     "/sys/devices/soc.0/7824900.sdhci/mmc_host/mmc0",
     "/sys/devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001",
     "/sys/devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0",
-    "/sys/devices/soc.0c/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p30", // boot
+    "/sys/devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p30", // boot
     "/sys/devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p35", // cache
     "/sys/devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p29", // modem
     "/sys/devices/soc.0/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p32", // persist
